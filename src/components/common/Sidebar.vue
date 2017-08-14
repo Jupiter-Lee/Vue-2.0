@@ -25,28 +25,85 @@
             return {
                 items: [
                     {
-                        icon: 'el-icon-setting',
-                        index: 'readme',
-                        title: '自述'
+                        icon: 'el-icon-menu',
+                        index: 'basecharts',
+                        title: '主页'
                     },
                     {
-                        icon: 'el-icon-menu',
+                        icon: 'el-icon-document',
                         index: '2',
-                        title: '表格',
+                        title: '档案管理',
                         subs: [
                             {
                                 index: 'basetable',
-                                title: '基础表格'
+                                title: '区域'
                             },
                             {
                                 index: 'vuetable',
+                                title: '建筑物'
+                            },
+                            {
+                                index: '',
+                                title: '集中器'
+                            },
+                            {
+                                index: '',
+                                title: '表计'
+                            },
+                            {
+                                index: '',
+                                title: '路由'
+                            }
+                        ]
+                    },
+                    {
+                        icon: 'el-icon-menu',
+                        index: '3',
+                        title: '抄表管理',
+                        subs: [
+                            {
+                                index: '',
+                                title: '基础表格'
+                            },
+                            {
+                                index: '',
+                                title: 'Vue表格组件'
+                            }
+                        ]
+                    },  
+                    {
+                        icon: 'el-icon-setting',
+                        index: '4',
+                        title: '运行维护',
+                        subs: [
+                            {
+                                index: '',
+                                title: '基础表格'
+                            },
+                            {
+                                index: '',
                                 title: 'Vue表格组件'
                             }
                         ]
                     },
                     {
+                        icon: 'el-icon-menu',
+                        index: '5',
+                        title: '权限管理',
+                        subs: [
+                            {
+                                index: '',
+                                title: '基础表格'
+                            },
+                            {
+                                index: '',
+                                title: 'Vue表格组件'
+                            }
+                        ]
+                    },                                                              
+                    {
                         icon: 'el-icon-date',
-                        index: '3',
+                        index: '6',
                         title: '表单',
                         subs: [
                             {
@@ -66,11 +123,6 @@
                                 title: '文件上传'
                             }
                         ]
-                    },
-                    {
-                        icon: 'el-icon-star-on',
-                        index: 'basecharts',
-                        title: '图表'
                     },
                     {
                         icon: 'el-icon-upload2',
