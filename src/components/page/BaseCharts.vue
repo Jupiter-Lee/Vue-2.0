@@ -8,19 +8,19 @@
         </div>
         <div class="schart">
             <div class="content-title">柱状图</div>
-            <schart canvasId="bar" width="500" height="400" :data="data1" type="bar" :options="options1"></schart>
+            <schart canvasId="bar" :width="width" :height="height" :data="data1" type="bar" :options="options1"></schart>
         </div>
         <div class="schart">
         <div class="content-title">折线图</div>
-        <schart canvasId="line" width="500" height="400" :data="data1" type="line" :options="options1"></schart>
+        <schart canvasId="line" :width="width" :height="height" :data="data1" type="line" :options="options1"></schart>
         </div>
         <div class="schart">
         <div class="content-title">饼状图</div>
-        <schart canvasId="pie" width="500" height="400" :data="data2" type="pie" :options="options2"></schart>
+        <schart canvasId="pie" :width="width" :height="height" :data="data2" type="pie" :options="options2"></schart>
         </div>
         <div class="schart">
         <div class="content-title">环形图</div>
-        <schart canvasId="ring" width="500" height="400" :data="data2" type="ring" :options="options2"></schart>
+        <schart canvasId="ring" :width="width" :height="height" :data="data2" type="ring" :options="options2"></schart>
         </div>
     </div>
 </template>
@@ -32,6 +32,8 @@
             Schart
         },
         data: () => ({
+            width: 500,
+            height: 400,
             data1:[
                 {name:'2012',value:1141},
                 {name:'2013',value:1499},
@@ -67,7 +69,8 @@
 
 <style scoped>
     .schart{
-        width: 600px;
+        max-width: 600px;
+        margin: 0 auto;
         display: inline-block;
     }
     .content-title{
