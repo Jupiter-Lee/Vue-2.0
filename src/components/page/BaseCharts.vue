@@ -2,84 +2,119 @@
     <div>
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-date"></i> 图表</el-breadcrumb-item>
+                <el-breadcrumb-item>
+                    <i class="el-icon-date"></i> 图表</el-breadcrumb-item>
                 <el-breadcrumb-item>基础图表</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
-        <div class="schart">
-            <div class="content-title">柱状图</div>
-            <schart canvasId="bar" :width="width" :height="height" :data="data1" type="bar" :options="options1"></schart>
-        </div>
-        <div class="schart">
-        <div class="content-title">折线图</div>
-        <schart canvasId="line" :width="width" :height="height" :data="data1" type="line" :options="options1"></schart>
-        </div>
-        <div class="schart">
-        <div class="content-title">饼状图</div>
-        <schart canvasId="pie" :width="width" :height="height" :data="data2" type="pie" :options="options2"></schart>
-        </div>
-        <div class="schart">
-        <div class="content-title">环形图</div>
-        <schart canvasId="ring" :width="width" :height="height" :data="data2" type="ring" :options="options2"></schart>
-        </div>
+    
+        <div id="concentrator" class="concentrator" style="width: 600px;height:400px;"></div>
+        <div id="meter" class="meter" style="width: 600px;height:400px;"></div>
+    
     </div>
 </template>
 
 <script>
-    import Schart from 'vue-schart';
-    export default {
-        components: {
-            Schart
-        },
-        data: () => ({
-            width: 500,
-            height: 400,
-            data1:[
-                {name:'2012',value:1141},
-                {name:'2013',value:1499},
-                {name:'2014',value:2260},
-                {name:'2015',value:1170},
-                {name:'2016',value:970},
-                {name:'2017',value:1450}
-            ],
-            data2 : [
-                {name:'短袖',value:1200},
-                {name:'休闲裤',value:1222},
-                {name:'连衣裙',value:1283},
-                {name:'外套',value:1314},
-                {name:'羽绒服',value:2314}
-            ],
-            options1: {
-                title: '某商店近年营业总额',
-                bgColor: '#829dda',
-                titleColor: '#ffffff',
-                fillColor: '#72f6ff',
-                axisColor: '#eeeeee',
-                contentColor: '#bbbbbb'
+import Schart from 'vue-schart';
+import echarts from 'echarts'
+export default {
+    components: {
+        Schart
+    },
+    data: () => ({
+    }),
+    mounted() {
+        var concentrator = echarts.init(document.getElementById('concentrator'));
+        var meter = echarts.init(document.getElementById('meter'));
+        var option01 = {
+            title: {
+                text: '集中器情况',
+                subtext: '在线情况',
+                x: 'center'
             },
-            options2: {
-                title: '某商店各商品年度销量',
-                bgColor: '#829dca',
-                titleColor: '#ffffff',
-                legendColor: '#ffffff'
-            }
-        })
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['在线', '离线']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        { value: 335, name: '在线' },
+                        { value: 135, name: '离线' }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        var option02 = {
+            title: {
+                text: '表计情况',
+                subtext: '在线情况',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['在线', '离线']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        { value: 335, name: '在线' },
+                        { value: 135, name: '离线' }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        concentrator.setOption(option01)
+        meter.setOption(option02)
     }
+}
 </script>
 
 <style scoped>
-    .schart{
-        max-width: 600px;
-        margin: 0 auto;
-        display: inline-block;
-    }
-    .content-title{
-        clear: both;
-        font-weight: 400;
-        line-height: 50px;
-        margin: 10px 0;
-        font-size: 22px;
-        color: #1f2f3d;
-    }
-    
+.schart {
+    max-width: 600px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.content-title {
+    clear: both;
+    font-weight: 400;
+    line-height: 50px;
+    margin: 10px 0;
+    font-size: 22px;
+    color: #1f2f3d;
+}
 </style>
