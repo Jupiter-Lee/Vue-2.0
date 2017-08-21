@@ -7,10 +7,11 @@
                 <el-breadcrumb-item>基础图表</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
-    
-        <div id="concentrator" class="concentrator" style="width: 600px;height:400px;"></div>
-        <div id="meter" class="meter" style="width: 600px;height:400px;"></div>
-    
+
+        <div class="rate">
+            <div id="concentrator" class="concentrator" style="width: 600px;height:400px;"></div>
+            <div id="meter" class="meter" style="width: 600px;height:400px;"></div>
+        </div>
     </div>
 </template>
 
@@ -103,18 +104,31 @@ export default {
 </script>
 
 <style scoped>
-.schart {
-    max-width: 600px;
-    margin: 0 auto;
-    display: inline-block;
+
+.rate {
+    width: 100%;
+    height: auto;
 }
 
-.content-title {
-    clear: both;
-    font-weight: 400;
-    line-height: 50px;
-    margin: 10px 0;
-    font-size: 22px;
-    color: #1f2f3d;
+.concentrator {
+    margin-bottom: 10px;
 }
+
+.meter {
+    margin-top: 10px;
+}
+/* 
+.crData {
+    width: 300px;
+    height: 400px;
+    float: right;
+}
+
+.meterData {
+    width: 300px;
+    height: 400px;
+    float: right;
+} */
+
+
 </style>
