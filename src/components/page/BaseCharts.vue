@@ -8,9 +8,22 @@
             </el-breadcrumb>
         </div>
 
-        <div class="rate">
-            <div id="concentrator" class="concentrator" style="width: 600px;height:400px;"></div>
-            <div id="meter" class="meter" style="width: 600px;height:400px;"></div>
+        <div class="row">
+            <div class="col-md-6" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+
+                <div id="concentrator" class="concentrator" style="width: 600px;height:400px;"></div>
+
+            </div>
+            <div class="col-md-6" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+
+                <div id="meter" class="meter" style="width: 600px;height:400px;"></div>
+
+            </div>
+            <!-- 
+                <div class="crData"></div>
+                <div class="meterData"></div>
+     -->
+
         </div>
     </div>
 </template>
@@ -104,6 +117,13 @@ export default {
 </script>
 
 <style scoped>
+#concentrator {
+    background: aliceblue;
+}
+
+#meter {
+    background: aliceblue;
+}
 
 .rate {
     width: 100%;
@@ -117,18 +137,18 @@ export default {
 .meter {
     margin-top: 10px;
 }
-/* 
+
 .crData {
     width: 300px;
     height: 400px;
     float: right;
+    border: solid #aaaaaa 1px;
 }
 
 .meterData {
     width: 300px;
     height: 400px;
     float: right;
-} */
-
-
+    border: solid #aaaaaa 1px;
+}
 </style>
