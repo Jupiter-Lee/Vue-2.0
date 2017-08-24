@@ -43,7 +43,7 @@
                                 title: '建筑物'
                             },
                             {
-                                index: '',
+                                index: 'oldcharts',
                                 title: '集中器'
                             },
                             {

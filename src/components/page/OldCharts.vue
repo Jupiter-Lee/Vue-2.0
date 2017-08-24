@@ -70,7 +70,8 @@
                         type: "line",
                         data: [5, 20, 36, 10, 10, 20]
                     }
-                ]
+                ],
+                resizable: true
             },
             bar: {
                 color:["#20a0ff","#13CE66","#F7BA2A","#FF4949"],
@@ -125,7 +126,9 @@
                             }
                         }
                     }
-                ]
+                ],
+                resizable: true
+                
             },
             pie_radius:{
                 color:["#20a0ff","#13CE66","#F7BA2A","#FF4949","#61a0a8"],
@@ -191,6 +194,7 @@
                         }
                     ]
                 }
+
         })
     }
 </script>

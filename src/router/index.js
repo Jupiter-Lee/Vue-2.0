@@ -46,6 +46,10 @@ export default new Router({
                     component: resolve => require(['../components/page/BaseCharts.vue'], resolve)   // vue-schart组件
                 },
                 {
+                    path: '/oldcharts',
+                    component: resolve => require(['../components/page/OldCharts.vue'], resolve)   // vue-schart组件
+                },
+                {
                     path: '/drag',
                     component: resolve => require(['../components/page/DragList.vue'], resolve)    // 拖拽列表组件
                 }
